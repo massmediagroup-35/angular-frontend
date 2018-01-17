@@ -12,7 +12,6 @@ export class StatusComponent implements OnInit {
   ngOnInit(): void {
     const token = localStorage.getItem('token');
     if (token) {
-      console.log(token)
       this.auth.ensureAuthenticated(token)
       .then((user) => {
         console.log(user.json());

@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+    node:
+        build:
+            context: ./node
+            args:
+                PUID: $PUID
+                PGID: $PGID
+        volumes:
+            - ./..:/var/www
+        ports:
+            - $NG_PORT:4200
+            - $NG_RELOAD_PORT:49153
+        tty: true
